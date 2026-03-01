@@ -1,0 +1,10 @@
+{
+	"Mon":"GOTO default",
+	"Tue":"GOTO default",
+	"Wed":"GOTO default",
+	"Thu":"GOTO default",
+	"Fri":"GOTO default",
+	"Set":"GOTO default",
+	"Sun":"GOTO default",
+	"default":"630 Custom_MouseValleyRuined 15 15 0 / 650 Custom_MouseValleyRuined 20 20 1"
+}

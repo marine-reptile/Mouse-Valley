@@ -1,0 +1,92 @@
+{
+	"Changes": [
+		{
+			"Action": "Load",
+			"Target": "Mods/marinereptile.Mouse_Valley_CP/MouseBread",   //中间Sarvente部分是你在manifest里所写的唯一id，MouseBread，代表食物的名字。
+			"FromFile": "assets/Items/Recipes/MouseBread.png"   //存放食物图片的路径，如果对路径概念不了解的小白，只变更最后一部分即可。
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"MouseBread": {   //食物的唯一ID，和你的图片保持一致即可。
+					"Name": "MouseBread",   //食物的名称，虽然它与唯一ID可以一样，但是牢记它们是有区别的。
+					"DisplayName": "{{i18n:MouseBread.name}}",   //食物在游戏中的显示名称，可以使用中文。
+					"Description": "{{i18n:MouseBread.text}}",   //食物在游戏中的介绍文本。
+					"Type": "Cooking",
+					"Category": -7,
+					"Price": 500,   //食物的出货价格
+					"Texture": "Mods\\marinereptile.Mouse_Valley_CP\\MouseBread",   //中间是同上所述的唯一ID，最后面的是你这个食物的名称。
+					"SpriteIndex": 0,   //这个食物在贴图中的位置，一个食物一个图的话不用管。大图的话从0开始数
+					"Edibility": 0,   //可食用性，不可低于-300，计算方式：回复的能量=可食用性×2.25，回复的血量=可食用性x1.125
+					"IsDrink": false,   //是食物还是饮品（影响食用贴图，是抛起来吃掉还是吨吨吨喝。）是吃的写false，是喝的写true，请勿填写其余选项。
+					"ExcludeFromFishingCollection": true,   //是否从钓鱼清单中排除,建议写ture（影响完美度）
+					"ExcludeFromShippingCollection": true,   //是否从出货清单中排除,建议写ture（影响完美度）
+					"ExcludeFromRandomSale": false,   //是否从选择要出售的随机商品时从商店中排除此商品,建议写false
+					"Buffs": [   //食物提供的buff，以下数值不宜填超过8。
+						{
+							"Duration": 250,  //buff持续时间
+							"CustomAttributes": {
+								"FarmingLevel": 0,   //临时耕种等级提升，等级类提升不能是负数和小数
+								"FishingLevel": 0,   //临时钓鱼等级提升
+								"MiningLevel": 0,   //临时采矿等级提升
+								"LuckLevel": 2,   //临时幸运提升
+								"ForagingLevel": 0,   //觅食等级提升，记住：没有临时战斗等级提升的食物，不可用，别写多余的
+								"MaxStamina": 50,   //最大能量值提升，不能是小数
+								"MagneticRadius": 0,   //磁力提升，参考：一个铱环是64磁力，不能是负数和小数
+								"Speed": 1,   //速度提升
+								"Defense": 0,   //防御提升，1防御可以减免1点伤害
+								"Attack": 0   //攻击提升，1攻击可以提升3点伤害
+							}
+						}
+					]
+				}
+			}
+		},
+		//食谱的详细设定
+		{
+			"Action": "EditData",
+			"Target": "Data/CookingRecipes",
+			"Entries": {
+				"MouseBread": "424 2 / 25 5 / MouseBread 1 / f MouseSella 0 / "
+			}
+			//食物名称（不是内部ID！），然后是配方内容，格式：物品1的id（空格）数量（空格）物品2的id（空格）数量，再往后一格的不用管，再往后一格是：产出物品id（空格）数量，再往后一格是获取方法。
+			//获取方法示例
+			//这是npc礼物形式的：f 人名英文 好感等级（各个参数之间需要用一个空格隔开），上面所写的例子是德米特里厄斯2心解锁，后续可以衔接一封邮件，请参考邮件模板
+			//这是等级解锁形式的：s（空格）Farming，Fishing，Mining，Foraging，combat耕种钓鱼挖矿觅食战斗选择一个（空格）需要达到的等级，示例：s combat 4（战斗4级解锁）
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/NPCGiftTastes",   //这段是添加npc的偏好
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Universal_Neutral"],   //npc的普遍偏好，不适用mod角色，love最爱，like喜欢，Neutral一般，Dislike不喜欢，Hate讨厌
+					"Value": "MouseBread",   //这是食物的内部ID
+					"Delimiter": " "
+				},
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Mail",    //邮件寄送，建议使用i18n填写文字，不然容易出bug，如果不打算邮件寄送，这一段可以全删掉
+			"Entries": {
+				"MouseBread_recipe": "[letterbg 0] {{i18n:MouseBread_recipe.text}} %item cookingRecipe MouseBread %%[#]{{i18n:MouseBread_recipe.name}}"
+			}   //邮件的id，然后是信纸的样式，0是白纸，1是长横线的纸，2是法师信纸，3是祝尼魔信纸，4是joja信纸，然后是引用的信件内容，之后%item后面有两种情况，看下面介绍，然后是信件的名称
+			//如果是寄送配方，那么格式：cookRecipe 物品名称（不是ID！）
+			//如果是寄送物品，那么格式：object 物品名称 数量
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/TriggerActions",   //邮件触发
+			"Entries": {
+				"MouseBread_Mail":{   //邮件触发的内部id
+					"Id": "MouseBread_Mail",   //和上面的一样
+					"Trigger": "DayEnding",   //触发后添加邮件的时间，一般不用管
+					"Condition": "PLAYER_HEARTS Current MouseSella 0",   //触发条件，这里是德米特里厄斯2心触发，参考网址：https://stardewvalleywiki.com/Modding:Game_state_queries
+					"Action": "AddMail Current MouseBread_recipe tomorrow"
+				}   //把中间的部分改成邮件寄送部分的邮件id
+			}
+		}
+	]
+}

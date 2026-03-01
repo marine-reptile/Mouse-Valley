@@ -1,0 +1,63 @@
+{
+    "Format": "2.3.0",
+    "CustomLocations": [
+        {
+            "Name": "Custom_MouseValleyRuined",
+            "FromMapFile": "assets/Maps/MouseValleyRuined.tmx"
+        },
+        {
+            "Name": "Custom_MouseValley",
+            "FromMapFile": "assets/Maps/MouseValley.tmx",
+        },
+        {
+            "Name": "Custom_MouseValleyNew",
+            "FromMapFile": "assets/Maps/MouseValleyNew.tmx",
+        },
+        {
+            "Name": "Custom_MouseLivingRoom",
+            "FromMapFile": "assets/Maps/MouseLivingRoom.tmx",
+        },
+        {
+            "Name": "Custom_MouseValleyNew_MouseNewYear",
+            "FromMapFile": "assets/Maps/MouseValleyNew_MouseNewYear.tmx",
+        }
+    ],
+    "Changes": [
+        {
+            "Action": "Include",
+            "FromFile": "assets/Items/items.json",
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Crops/crops.json",
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Maps/maps.json",
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Characters/characters.json",
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Quests/quests.json",
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Mail/mail.json",
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Shops/shops.json",
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Events/events.json",
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Festivals/festivals.json",
+        }
+    ]
+}

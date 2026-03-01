@@ -1,0 +1,106 @@
+{
+	"Changes": [
+
+		{
+			"Action": "Load",
+			"Target": "Data/Events/Custom_MouseValleyRuined", //你的地图名字
+			"FromFile": "assets/XNB/Event.xnb" //读取这个xnb文件
+		},
+		{
+			"Action": "Load",
+			"Target": "Data/Events/Custom_MouseValley", //你的地图名字
+			"FromFile": "assets/XNB/Event.xnb" //读取这个xnb文件
+		},
+		{
+			"Action": "Load",
+			"Target": "Data/Events/Custom_MouseValleyNew",
+			"FromFile": "assets/XNB/Event.xnb"
+		},
+		{
+			"Action": "Load",
+			"Target": "Data/Events/Custom_MouseLivingRoom",
+			"FromFile": "assets/XNB/Event.xnb"
+		},
+		{
+			"Action": "Load",
+			"Target": "Data/Events/AdventureGuild",
+			"FromFile": "assets/XNB/Event.xnb"
+		},
+		{
+			"Action": "Load",
+			"Target": "Data/Events/BackWoods",
+			"FromFile": "assets/XNB/Event.xnb"
+		},
+		{
+			"Action": "Load",
+			"Target": "Data/Events/Custom_MouseValleyNew_MouseNewYear",
+			"FromFile": "assets/XNB/Event.xnb"
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Mine",
+			"MapTiles": [
+				{
+					"Position": { "X": 20, "Y": 3 },
+					"Layer": "Buildings",
+					"SetProperties": {
+						"Action":"Warp 23 28 Custom_MouseValleyNew"
+					}
+				},
+			]
+		},
+		{
+			"Action": "EditData",
+			"Target": "Strings/StringsFromMaps",
+			"Entries": {
+				"MVR.1": "{{i18n:Map_MVR.1}}",
+				"MVR.2": "{{i18n:Map_MVR.2}}",
+				"MVR.3": "{{i18n:Map_MVR.3}}",
+				"MVR.4": "{{i18n:Map_MVR.4}}",
+				"MVR.5": "{{i18n:Map_MVR.5}}",
+				"MVR.6": "{{i18n:Map_MVR.6}}",
+				"MVR.7": "{{i18n:Map_MVR.7}}",
+				"MVR.8": "{{i18n:Map_MVR.8}}",
+				"MVR.9": "{{i18n:Map_MVR.9}}",
+				"MVR.10": "{{i18n:Map_MVR.10}}",
+				"MVR.11": "{{i18n:Map_MVR.11}}"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Strings/StringsFromMaps",
+			"Entries": {
+				"MVN.MNY.1": "{{i18n:MouseNewYear.Map.1}}",
+				"MVN.MNY.2": "{{i18n:MouseNewYear.Map.2}}",
+				"MVN.MNY.3": "{{i18n:MouseNewYear.Map.3}}",
+				"MVN.MNY.4": "{{i18n:MouseNewYear.Map.4}}",
+				"MVN.MNY.5": "{{i18n:MouseNewYear.Map.5}}",
+				"MVN.MNY.6": "{{i18n:MouseNewYear.Map.6}}",
+				"MVN.MNY.7": "{{i18n:MouseNewYear.Map.7}}",
+				"MVN.MNY.8": "{{i18n:MouseNewYear.Map.8}}",
+				"MVN.MNY.9": "{{i18n:MouseNewYear.Map.9}}",
+				"MVN.MNY.10": "{{i18n:MouseNewYear.Map.10}}",
+				"MVN.MNY.11": "{{i18n:MouseNewYear.Map.11}}",
+				"MVN.MNY.12": "{{i18n:MouseNewYear.Map.12}}",
+				"MVN.MNY.13": "{{i18n:MouseNewYear.Map.13}}",
+				"MVN.MNY.14": "{{i18n:MouseNewYear.Map.14}}",
+				"MVN.MNY.15": "{{i18n:MouseNewYear.Map.15}}",
+				"MVN.MNY.16": "{{i18n:MouseNewYear.Map.16}}",
+				"MVN.MNY.17": "{{i18n:MouseNewYear.Map.17}}",
+				"MVN.MNY.18": "{{i18n:MouseNewYear.Map.18}}",
+				"MVN.MNY.19": "{{i18n:MouseNewYear.Map.19}}",
+				"MVN.MNY.20": "{{i18n:MouseNewYear.Map.20}}",
+				"MVN.MNY.21": "{{i18n:MouseNewYear.Map.21}}",
+				"MVN.MNY.22": "{{i18n:MouseNewYear.Map.22}}",
+				"MVN.MNY.23": "{{i18n:MouseNewYear.Map.23}}",
+				"MVN.MNY.24": "{{i18n:MouseNewYear.Map.24}}",
+				"MVN.MNY.25": "{{i18n:MouseNewYear.Map.25}}",
+				"MVN.MNY.26": "{{i18n:MouseNewYear.Map.26}}",
+				"MVN.MNY.27": "{{i18n:MouseNewYear.Map.27}}",
+				"MVN.MNY.28": "{{i18n:MouseNewYear.Map.28}}",
+				"MVN.MNY.29": "{{i18n:MouseNewYear.Map.29}}",
+				"MVN.MNY.30": "{{i18n:MouseNewYear.Map.30}}"
+			}
+		}
+	]
+}

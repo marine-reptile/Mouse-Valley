@@ -1,0 +1,13 @@
+{
+
+  "Name": "Mouse_Valley_CP",
+    "Author": "marinereptile",
+  "Version": "0.0.1",
+  "Description": "Mouse Valley",
+  "UniqueID": "marinereptile.Mouse_Valley_CP",
+  "MinimumApiVersion": "3.13.0",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher",
+    "MinimumVersion": "2.0.0"
+  }
+}

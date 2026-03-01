@@ -1,0 +1,41 @@
+
+{
+	"Changes": [
+		{
+			"LogName": "Load Portraits",
+			"Action": "Load",
+			"Target": "Portraits/MouseFelixShop",
+			"FromFile": "assets/Characters/Portraits/MouseFelix.png"
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Shops",
+			"Entries": {
+				"MouseFelixShop": {
+					"ID": "MouseFelixShop",
+					"Owners": [
+						{
+							"Name": "AnyOrNone",
+							"Portrait": "Portraits/MouseFelixShop",
+							"Dialogues": [
+								{
+									"Id": "MouseFelixShop_Default",
+									"Dialogue": "{{i18n:MouseFelixShop.text}}"
+								}
+							],
+						}
+					],
+					"Items": [
+						{
+							"Id": "MouseValley_MouseVegetableSeeds",
+							"ItemId": "MouseVegetableSeeds",
+							"Price": 1000,
+							"AvailableStock": 10,
+							"AvailableStockLimit": "Player"
+						}
+					]
+				}
+			}
+		}
+	]
+}

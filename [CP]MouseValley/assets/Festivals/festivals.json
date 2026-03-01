@@ -1,0 +1,18 @@
+{
+	"Changes": [
+		{
+			"Action": "Include",
+			"FromFile": "assets/Festivals/FestivalDialogue.json"
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Festivals/FestivalDates",
+			"Entries": { "winter1": "{{i18n:MouseNewYear.name}}" },
+		},
+		{
+			"Action": "Load",
+			"Target": "Data/Festivals/winter1",
+			"FromFile": "assets/Festivals/MouseNewYear/MouseNewYear.json",
+		},
+	]
+}

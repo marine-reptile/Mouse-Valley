@@ -1,0 +1,22 @@
+{
+	"name": "{{i18n:MouseNewYear.name}}",
+	"conditions": "Custom_MouseValleyNew/1800 2400",
+	"set-up": "/WinterMountain/-1000 -1000/farmer 22 28 0 MouseFelix 1000 1000 2 MouseKerwin 1000 1000 1 MouseSella 1000 1000 1 MouseNina 1000 1000 2 Lewis 1000 1000 2 Marlon 1000 1000 3 Wizard 1000 1000 2/changeToTemporaryMap Custom_MouseValleyNew_MouseNewYear/warp MouseFelix 12 21 true/warp MouseKerwin 4 19 true/warp MouseSella 5 21 true/warp MouseNina 10 18 true/warp Lewis 16 21 true/warp Marlon 37 5 true/warp Wizard 33 3 true/advancedMove MouseKerwin true 0 -9 -2 0 0 -8 0 8 2 0 0 9 1 18000/playerControl mousenewyear",
+	"mainEvent": "null"
+}
+
+///
+//	"Changes": [
+//		{
+//			"Action": "EditData",
+//			"Target": "Data/Festivals/winter1", // 替换为你的节日ID
+//			"TextOperations": [
+//				{
+//					"Operation": "Append",
+//					"Target": ["Entries", "set-up"], // 目标是 set-up 字段
+//					"Value": "advancedMove MouseKerwin true 0 -9 -2 0 0 -8 3 5000 0 8 2 0 0 9 1 18000/playerControl mousenewyear", // 注意开头的空格，防止和上一个数据粘连
+//					"Delimiter": " "
+//				},
+//			]
+//		}
+//	]

@@ -1,0 +1,32 @@
+{
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/Farm",
+			"Entries": {
+				"312790001/x BuildMouseValley1/e 31279001": "null"//唯一信件id，x后的英文与下述对应。
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Mail",
+			"Entries": {
+				"BuildMouseValley1": "{{i18n:BuildMouseValley1.text}}[#]{{i18n:BuildMouseValley1.title}}"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/Farm",
+			"Entries": {
+				"312790002/x RatSwordMail": "null"//唯一信件id，x后的英文与下述对应。
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Mail",
+			"Entries": {
+				"RatSwordMail": "{{i18n:SellRatSword.text}}%item quest RatSwordQuest%%[#]{{i18n:SellRatSword.title}}",
+			}
+		}
+	]
+}

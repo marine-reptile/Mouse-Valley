@@ -1,0 +1,12 @@
+{
+	"Changes": [
+		{
+			"Action": "Include",
+			"FromFile": "assets/Items/Weapons/weapons.json",
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Items/Recipes/recipes.json",
+		}
+	]
+}

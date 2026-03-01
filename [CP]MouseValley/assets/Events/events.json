@@ -1,0 +1,97 @@
+{
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/Mine",
+			"Entries": {
+				"31279001/t 600 2400/w sunny/e 100162": "playful/21 8/farmer 18 13 0 MouseKerwin 23 8 2/skippable/ignoreCollisions farmer/pause 300/jump MouseKerwin/pause 300/speed MouseKerwin 5/move MouseKerwin -3 0 1 false/speed MouseKerwin 5/move MouseKerwin 0 -4 0 false/warp MouseKerwin -100 -100/pause 1000/move farmer 0 -5 3 false/move farmer 5 0 2 false/message {{i18n:31279001.1}}/facedirection farmer 0/pause 500/facedirection farmer 2/message {{i18n:31279001.2}}/emote farmer 8/pause 500/message {{i18n:31279001.3}}/end"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/AdventureGuild",
+			"Entries": {
+				"31279002/t 600 2400/w sunny/e 31279001": "playful/6 14/farmer 6 18 0 Marlon 4 11 2 Lewis 1000 1000 0/skippable/ignoreCollisions farmer/pause 300/move farmer 0 -4 3/move farmer -2 0 0/pause 500/speak Marlon {{i18n:31279002.1}}/emote farmer 40/pause 500/speak Marlon {{i18n:31279002.2}}/emote farmer 8/speak Marlon {{i18n:31279002.3}}/warp Lewis 6 18/facedirection Lewis 0/facedirection farmer 1/pause 500/speak Lewis {{i18n:31279002.4}}/speak Marlon {{i18n:31279002.5}}/emote Lewis 28/pause 1000/speak Lewis {{i18n:31279002.6}}/speak Marlon {{i18n:31279002.7}}/end"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/Custom_MouseValley",
+			"Entries": {
+				"31279003/t 1200 2400/e 31279002": "playful/22 9/farmer 22 15 0 Lewis 18 7 1 MouseFelix 1000 1000 0/skippable/ignoreCollisions farmer/pause 500/speak Lewis {{i18n:31279003.1}}/emote farmer 8/pause 500/move farmer 0 -5 0/speak Lewis {{i18n:31279003.2}}/warp MouseFelix 21 6/facedirection MouseFelix 2/emote farmer 16/pause 500/speak MouseFelix {{i18n:31279003.3}}/message {{i18n:31279003.4}}/speak Lewis {{i18n:31279003.5}}/message {{i18n:31279003.6}}/speak MouseFelix {{i18n:31279003.7}}/speak Lewis {{i18n:31279003.8}}/speak MouseFelix {{i18n:31279003.9}}/emote Lewis 16/pause 500/speak Lewis {{i18n:31279003.10}}/speak MouseFelix {{i18n:31279003.11}}/message {{i18n:31279003.12}}/emote farmer 40/pause 500/speak MouseFelix {{i18n:31279003.13}}/speak Lewis {{i18n:31279003.14}}/speak MouseFelix {{i18n:31279003.15}}/emote farmer 60/pause 500/message {{i18n:31279003.16}} /end"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/Custom_MouseValley",
+			"Entries": {
+				"31279004/e 31279003": "playful/22 9/farmer 22 15 0 MouseFelix 20 8 1 MouseNina 21 7 2 MouseSella 23 7 2 MouseKerwin 24 8 3/addObject 22 8 78/skippable/ignoreCollisions farmer/pause 1000/speak MouseSella {{i18n:31279004.1}}/speak MouseNina {{i18n:31279004.2}}/facedirection MouseFelix 2/facedirection MouseKerwin 2/pause 500/speak MouseFelix {{i18n:31279004.3}}/speak MouseKerwin {{i18n:31279004.4}}/move farmer 0 -4 0/addObject 22 9 78/speak MouseNina {{i18n:31279004.5}}/emote farmer 8/pause 500/jump MouseKerwin/speak MouseKerwin {{i18n:31279004.6}}/speak MouseFelix {{i18n:31279004.7}}/speak MouseNina {{i18n:31279004.8}}/speak MouseKerwin {{i18n:31279004.9}}/speak MouseSella {{i18n:31279004.10}}/speak MouseFelix {{i18n:31279004.11}}/message {{i18n:31279004.12}}/emote farmer 28/speak MouseFelix {{i18n:31279004.13}}/speak MouseKerwin {{i18n:31279004.14}}/message {{i18n:31279004.15}}/end"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/Custom_MouseValley",
+			"Entries": {
+				"31279005": "playful/22 9/farmer 22 15 0 MouseFelix 20 8 1 MouseNina 1000 1000 0 MouseSella 1000 1000 0 MouseKerwin 24 8 3/skippable/ignoreCollisions farmer/pause 1000/speak MouseFelix {{i18n:31279005.1}}/speak MouseKerwin {{i18n:31279005.2}}/facedirection MouseFelix 2 true/facedirection MouseKerwin 2/pause 500/speak MouseFelix {{i18n:31279005.3}}/speak MouseKerwin {{i18n:31279005.4}}/move farmer 0 -4 0/speak MouseFelix {{i18n:31279005.5}}/speak MouseKerwin {{i18n:31279006.1}}/speak MouseFelix {{i18n:31279005.7}}/speak MouseKerwin {{i18n:31279005.8}}/speak MouseFelix {{i18n:31279005.9}}/emote farmer 8/pause 500/emote MouseFelix 16 true/jump MouseFelix/pause 500/speak MouseFelix {{i18n:31279005.10}}/emote MouseKerwin 56/emote farmer 32/message {{i18n:31279005.11}}/message {{i18n:31279005.12}}/end"
+			}
+		},
+//		{
+//			"Action": "EditData",
+//			"Target": "Data/Events/Custom_MouseValleyNew",
+//			"Entries": {
+//				"31279006": "playful/18 24/farmer 22 28 0 MouseFelix 13 21 2/skippable/ignoreCollisions farmer/move farmer 0 -7 3/facedirection MouseFelix 1/jump MouseFelix/emote MouseFelix 16/pause 500/speed MouseFelix 4/move MouseFelix 7 0 1/pause 500/addObject 21 21 MouseVegetable/pause 500/speak MouseFelix {{i18n:31279006.1}}/facedirection MouseFelix 2/pause 1000/speak MouseFelix {{i18n:31279006.2}}/message {{i18n:31279006.3}}/emote farmer 40/facedirection MouseFelix 1/pause 500/speak MouseFelix {{i18n:31279006.4}}/emote farmer 20/end"
+//			}
+//		},
+//		{
+//			"Action": "EditData",
+//			"Target": "Data/Events/Mine",
+//			"Entries": {
+//			//	"31279007": "playful/21 10/farmer 18 12 0 MouseKerwin 23 8 2/skippable/ignoreCollisions farmer/speak MouseKerwin {{i18n:31279007.1}}/end",
+//
+//				"31279007": "playful/21 10/farmer 18 12 0 MouseKerwin 23 8 2/skippable/ignoreCollisions farmer/pause 1000/move farmer 0 -4 1/move farmer 3 0 1/emote farmer 8/facedirection MouseKerwin 3/speak MouseKerwin {{i18n:31279007.1}}/facedirection MouseKerwin 2/pause 500/speak MouseKerwin {{i18n:31279007.2}}/facedirection MouseKerwin 3/speak MouseKerwin {{i18n:31279007.3}}/warp MouseKerwin 100 100/message {{i18n:31279007.4}}/end"
+//			}
+//		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/BackWoods",
+			"Entries": {
+				"31279008": "playful/33 11/farmer 28 12 0 MouseNina 26 9 0/skippable/ignoreCollisions farmer/pause 1000/emote MouseNina 20/speak MouseNina {{i18n:31279008.1}}/facedirection MouseNina 2/jump MouseNina/pause 500/speak MouseNina {{i18n:31279008.2}}/move MouseNina 0 3 1/facedirection farmer 3/addObject 27 12 404/pause 500/speak MouseNina {{i18n:31279008.3}}/pause 500/facedirection MouseNina 2/emote MouseNina 28/speak MouseNina {{i18n:31279008.4}}/message {{i18n:31279008.5}}/end"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/Saloon",
+			"Entries": {
+				"31279009": "playful/31 7/farmer 31 10 0 MouseSella 33 6 0/skippable/ignoreCollisions farmer/pause 1000/message {{i18n:31279009.1}}/move farmer 0 -2 1/move farmer 2 0 0/emote farmer 8/facedirection MouseSella 2/speak MouseSella {{i18n:31279009.2}}/pause 500/speak MouseSella {{i18n:31279009.3}}/move MouseSella 0 1 2/facedirection farmer 1/move MouseSella 2 0 2/move MouseSella 0 1 2/pause 500/speak MouseSella {{i18n:31279009.4}}/pause 500/facedirection MouseSella 3/pause 500/speak MouseSella {{i18n:31279009.5}}/pause 500/message {{i18n:31279009.6}}/end"
+			}
+		},
+//		{
+//			"Action": "EditData",
+//			"Target": "Data/Events/Custom_MouseValleyNew",
+//			"Entries": {
+//				"31279010": "playful/19 17/farmer 22 22 0 MouseFelix 16 16 3 MouseNina 16 18 3/skippable/ignoreCollisions farmer/addObject 12 16 675/addObject 14 16 675/addObject 14 17 675/addObject 14 18 675/addObject 12 17 675/addObject 12 18 675/addObject 13 16 675/addObject 13 17 675/addObject 13 18 675/pause 2000/emote MouseFelix 28/pause 500/speak MouseFelix {{i18n:31279010.1}}/pause 500/emote MouseNina 60/pause 500/speak MouseNina {{i18n:31279010.2}}/pause 1000/message {{i18n:31279010.3}}/move farmer 0 -5 3/move farmer -2 0 3/emote farmer 8/pause 500/faceDirection MouseFelix 1 true/faceDirection MouseNina 1 true/emote MouseFelix 16 true/emote MouseNina 16 true/speak MouseNina {{i18n:31279010.4}}/pause 500/speak MouseFelix {{i18n:31279010.5}}/facedirection MouseFelix 3/pause 1000/speak MouseFelix {{i18n:31279010.6}}/pause 1000/speak MouseNina {{i18n:31279010.7}}/faceDirection MouseFelix 1/speak MouseFelix {{i18n:31279010.8}}/pause 250/facedirection MouseNina 0/speak MouseNina {{i18n:31279010.9}}/pause 2000/speak MouseFelix {{i18n:31279010.10}}/pause 250/emote MouseNina 16 true/jump MouseNina/pause 250/speak MouseNina {{i18n:31279010.11}}/pause 250/facedirection MouseFelix 2/pause 500/emote MouseFelix 28/speak MouseFelix {{i18n:31279010.12}}/pause 500/facedirection MouseNina 2/emote MouseNina 12/pause 500/quickQuestion #{{i18n:31279010.1_1}}#{{i18n:31279010.2_1}} (break) speak MouseFelix {{i18n:31279010.1_2}}\\pause 500\\facedirection MouseNina 0\\speak MouseNina {{i18n:31279010.1_3}} (break) facedirection MouseNina 0\\speak MouseNina {{i18n:31279010.2_2}}\\pause 500\\speak MouseFelix {{i18n:31279010.2_3}} /emote farmer 20/pause 500/facedirection MouseFelix 1/speak MouseFelix {{i18n:31279010.13}}/pause 500/message {{i18n:31279010.14}}/end"
+//			}
+//		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/ScienceHouse",
+			"Entries": {
+				"31279011": "playful/26 11/farmer 20 12 1 MouseKerwin 28 9 0 Robin 8 18 2/skippable/ignoreCollisions farmer/pause 1000/speak MouseKerwin {{i18n:31279011.1}}/emote farmer 8/message {{i18n:31279011.2}}/move farmer 6 0 0/emote farmer 16/faceDirection MouseKerwin 2 true/emote MouseKerwin 16 true/jump MouseKerwin/speak MouseKerwin {{i18n:31279011.3}}/pause 500/emote farmer 8/speak MouseKerwin {{i18n:31279011.4}}/faceDirection MouseKerwin 0/pause 250/speak MouseKerwin {{i18n:31279011.5}}/faceDirection MouseKerwin 2/pause 250/question null \"#{{i18n:31279011.6}}#{{i18n:31279011.7}}\" /speak MouseKerwin {{i18n:31279011.8}}/pause 500/speak MouseKerwin {{i18n:31279011.9}}/pause 250/quickQuestion #{{i18n:31279011.1_1}}#{{i18n:31279011.2_1}} (break) speak MouseKerwin {{i18n:31279011.1_2}} (break) speak MouseKerwin {{i18n:31279011.2_2}}/pause 500/speak Robin {{i18n:31279011.10}}/faceDirection farmer 3 true/ faceDirection MouseKerwin 3 true/emote farmer 16 true/emote MouseKerwin 16/pause 250/speed MouseKerwin 3/move MouseKerwin 1 0 2/speed MouseKerwin 3/move MouseKerwin 0 2 1/speed MouseKerwin 3/move MouseKerwin 1 0 1/Warp MouseKerwin 100 100/emote farmer 40/speak Robin {{i18n:31279011.11}}/pause 500/end"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/Forest",
+			"Entries": {
+				"31279012": "playful/43 11/farmer 50 10 3 MouseNina 39 8 0/skippable/ignoreCollisions farmer/pause 1000/speak MouseNina {{i18n:31279012.1}}/pause 500/message {{i18n:31279012.2}}/move farmer -6 0 0/move farmer 0 -2 3/question null \"#{{i18n:31279012.3}}\"/emote MouseNina 16 true/jump MouseNina/speed MouseNina 3/move MouseNina -3 0 2/speed MouseNina 3/move MouseNina 0 4 3/speed MouseNina 3/move MouseNina -9 0 3/Warp MouseNina 100 100/emote farmer 8/message {{i18n:31279012.4}}/globalFade/viewport 1000 1000/Warp MouseNina 3 5/Warp farmer 3 8/faceDirection MouseNina 0/faceDirection farmer 0/pause 500/viewport 4 7 clamp/pause 500/shake MouseNina 500/pause 500/emote farmer 8/faceDirection MouseNina 2/pause 500/speak MouseNina {{i18n:31279012.5}}/pause 500/emote farmer 60/pause 500/speak MouseNina {{i18n:31279012.6}}/pause 500/question null \"#{{i18n:31279012.7}}\"/pause 500/speak MouseNina {{i18n:31279012.8}}/quickQuestion #{{i18n:31279012.1_1}}#{{i18n:31279012.2_1}}#{{i18n:31279012.3_1}}(break)speak MouseNina {{i18n:31279012.1_2}}(break)speak MouseNina {{i18n:31279012.2_2}}(break)speak MouseNina {{i18n:31279012.3_2}}/pause 1000/emote MouseNina 40/pause 500/speak MouseNina {{i18n:31279012.9}}/end"
+			}
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Events/Custom_MouseValleyNew",
+			"Entries": {
+				"31279013": "playful/22 17/MouseFelix 21 16 1 MouseNina 22 15 2 MouseSella 23 15 2 MouseKerwin 24 16 3 farmer 22 24 0/addBigProp 22 17 22/addBigProp 23 17 23/addObject 22 16 239 -1/addObject 23 16 239 1/skippable/ignoreCollisions farmer/pause 1000/speak MouseSella {{i18n:31279013.1}}/pause 500/textAboveHead MouseNina {{i18n:31279013.2}}/pause 500/textAboveHead MouseFelix {{i18n:31279013.3}}/textAboveHead MouseKerwin {{i18n:31279013.4}}/pause 500/emote MouseSella 16/pause 500/speak MouseSella {{i18n:31279013.5}}/faceDirection MouseFelix 2 true/faceDirection MouseKerwin 2 true/move farmer 0 -6 0/speak MouseSella {{i18n:31279013.6}}/pause 500/textAboveHead MouseKerwin {{i18n:31279013.7}}/pause 500/textAboveHead MouseNina {{i18n:31279013.8}}/textAboveHead MouseFelix {{i18n:31279013.8}}/pause 1000/emote farmer 32/pause 1000/farmerEat 239/pause 500/faceDirection farmer 0/pause 1500/emote farmer 20/pause 500/speak MouseSella {{i18n:31279013.9}}/pause 500/emote MouseSella 28/pause 500/faceDirection MouseNina 1 true/faceDirection MouseFelix 1 true/faceDirection MouseKerwin 3/pause 500/speak MouseSella {{i18n:31279013.10}}/pause 500/speak MouseNina {{i18n:31279013.11}}/pause 500/speak MouseKerwin {{i18n:31279013.12}}/pause 500/speak MouseSella {{i18n:31279013.13}}/emote farmer 60/pause 500/message {{i18n:31279013.14}}/end"
+			}
+		}
+	]
+}

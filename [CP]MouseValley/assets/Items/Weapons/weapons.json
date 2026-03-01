@@ -1,0 +1,34 @@
+{
+	"Changes": [
+		{
+			"LogName": "Load Object",
+			"Action": "Load",
+			"Target": "Mods\\TDB\\Objects\\Weapons",
+			"FromFile": "assets/Items/Weapons/Weapons.png"
+		},
+		{
+			"Action": "EditData",
+			"Target": "Data/Weapons",
+			"Entries": {
+				"RatSword": {//唯一英文id
+					"Name": "RatSword",//英文名称
+					"DisplayName": "{{i18n:RatSword.name}}",//武器中文名称
+					"Description": "{{i18n:RatSword.text}}",
+					"MinDamage": 10,//最低伤害
+					"MaxDamage": 30,//最高伤害（实际每次攻击的输出伤害在这两者之间浮动）
+					"Knockback": 1.0,//击退程度
+					"Speed": 6,//攻速
+					"Precision": 80,//命中率，没用但得写
+					"Defense": 5,//为玩家加的防御
+					"Type": 3,//种类，其中1代表匕首，2代表锤，3代表剑
+					"AreaOfEffect": 50,//攻击增加范围（攻击范围更大）
+					"CritChance": 0.0,//暴击率
+					"CritMultiplier": 0.0,//暴击伤害倍数
+					"CanBeLostOnDeath": true,//玩家死亡时是否会掉落
+					"Texture": "Mods\\TDB\\Objects\\Weapons",//与Target对应
+					"SpriteIndex": 0,//如果单独画在一张图，那么不用改
+				},
+			}
+		},
+	]
+}

@@ -1,0 +1,81 @@
+{
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"MouseKerwin": {
+					"DisplayName": "{{i18n:MouseKerwin.name}}",
+					"BirthSeason": "summer",
+					"BirthDay": 7,
+					"Age": "Adult",
+					"HomeRegion": "Other",
+					"Language": "Default",
+					"Gender": "Male",
+					"CanSocialize": true,
+					"CanCommentOnPurchasedShopItems": false,
+					"CanReceiveGifts": true,
+					"IsDarkSkinned": false,
+					"CanBeRomanced": false,
+					"Calendar":"HiddenUntilMet",
+					"SocialTab": "HiddenUntilMet",
+					"ItemDeliveryQuests": false,
+					"PerfectionScore": true,
+					"EndSlideShow": true,
+					"CanVisitIsland": false,
+					"DumpsterDiveEmote": 32,
+					"DumpsterDiveFriendshipEffect": 5,
+					"FlowerDanceCanDance": false,
+					"WinterStarParticipant": false,
+					"ExcludeFromIntroductionsQuest": false,
+					"ExcludeFromPerfectionScore": false,
+					"FriendsAndFamily": {},
+					"UnlockConditions": null,
+					"SpawnIfMissing": true,
+					"Home": [
+						{
+							"Id": "Default",
+							"Location": "Custom_MouseLivingRoom",
+							"Tile":{"X": 22,"Y": 26},
+							"Direction": "Down"
+						}
+					],
+					"TextureName": "MouseKerwin",
+					"Size": {
+						"X": 16,
+						"Y": 32
+					},
+					"Breather": false,
+					"KissSpriteIndex": 28,
+					"HiddenProfileEmoteSound": null,
+					"HiddenProfileEmoteDuration": -1,
+					"HiddenProfileEmoteStartFrame": 16,
+					"HiddenProfileEmoteFrameCount": 4,
+					"HiddenProfileEmoteFrameDuration": 200.0,
+					"FestivalVanillaActorIndex": 0,
+					"CustomFields": {},
+				}
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/MouseKerwin",
+			"FromFile": "assets/Characters/Sprites/MouseKerwin.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Portraits/MouseKerwin",
+			"FromFile": "assets/Characters/Portraits/MouseKerwin.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/Dialogue/MouseKerwin",
+			"FromFile": "assets/Characters/Dialogue/MouseKerwin/MouseKerwin.json"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/schedules/MouseKerwin",
+			"FromFile": "assets/Characters/Schedules/MouseKerwin.json"
+		}
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Quests",
+			"Entries": {
+				"RatSwordQuest":"ItemDelivery/{{i18n:RatSwordQuest.title}}/{{i18n:RatSwordQuest.text}}/{{i18n:RatSwordQuest.quest}}/MouseKerwin 424 20/-1/0/-1/false/{{i18n:RatSwordQuest.dialogue}}",
+			}
+		},
+	]
+}

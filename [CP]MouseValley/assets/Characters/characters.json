@@ -1,0 +1,20 @@
+{
+	"Changes": [
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseFelix.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseKerwin.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseNina.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseSella.json"
+		}
+	]
+}

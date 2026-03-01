@@ -1,0 +1,19 @@
+{
+	"Changes": [
+		//egg festival
+		{
+			"LogName": "EggFestival",
+			"Action": "EditData",
+			"Target": "Data/Festivals/winter1",
+			"Entries": {
+				"MouseFelix": "{{i18n:MouseNewYear.MouseFelix}}",
+				"MouseKerwin": "{{i18n:MouseNewYear.MouseKerwin}}",
+				"MouseSella": "{{i18n:MouseNewYear.MouseSella}}",
+				"MouseNina": "{{i18n:MouseNewYear.MouseNina}}",
+				"Lewis": "{{i18n:MouseNewYear.Lewis}}",
+				"Wizard": "{{i18n:MouseNewYear.Wizard}}",
+				"Marlon": "{{i18n:MouseNewYear.Marlon}}"
+			}
+		}
+	]
+}

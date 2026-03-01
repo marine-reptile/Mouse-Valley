@@ -1,0 +1,81 @@
+{
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"MouseNina": {
+					"DisplayName": "{{i18n:MouseNina.name}}",
+					"BirthSeason": "summer",
+					"BirthDay": 7,
+					"Age": "Adult",
+					"HomeRegion": "Other",
+					"Language": "Default",
+					"Gender": "Male",
+					"CanSocialize": true,
+					"CanCommentOnPurchasedShopItems": false,
+					"CanReceiveGifts": true,
+					"IsDarkSkinned": false,
+					"CanBeRomanced": false,
+					"Calendar":"HiddenUntilMet",
+					"SocialTab": "HiddenUntilMet",
+					"ItemDeliveryQuests": false,
+					"PerfectionScore": true,
+					"EndSlideShow": true,
+					"CanVisitIsland": false,
+					"DumpsterDiveEmote": 32,
+					"DumpsterDiveFriendshipEffect": 5,
+					"FlowerDanceCanDance": false,
+					"WinterStarParticipant": false,
+					"ExcludeFromIntroductionsQuest": false,
+					"ExcludeFromPerfectionScore": false,
+					"FriendsAndFamily": {},
+					"UnlockConditions": null,
+					"SpawnIfMissing": true,
+					"Home": [
+						{
+							"Id": "Default",
+							"Location": "Custom_MouseLivingRoom",
+							"Tile":{"X": 23,"Y": 27},
+							"Direction": "Down"
+						}
+					],
+					"TextureName": "MouseNina",
+					"Size": {
+						"X": 16,
+						"Y": 32
+					},
+					"Breather": false,
+					"KissSpriteIndex": 28,
+					"HiddenProfileEmoteSound": null,
+					"HiddenProfileEmoteDuration": -1,
+					"HiddenProfileEmoteStartFrame": 16,
+					"HiddenProfileEmoteFrameCount": 4,
+					"HiddenProfileEmoteFrameDuration": 200.0,
+					"FestivalVanillaActorIndex": 0,
+					"CustomFields": {},
+				}
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/MouseNina",
+			"FromFile": "assets/Characters/Sprites/MouseNina.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Portraits/MouseNina",
+			"FromFile": "assets/Characters/Portraits/MouseNina.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/Dialogue/MouseNina",
+			"FromFile": "assets/Characters/Dialogue/MouseNina/MouseNina.json"
+		},
+		{
+			"Action": "Load",
+			"Target": "Characters/schedules/MouseNina",
+			"FromFile": "assets/Characters/Schedules/MouseNina.json"
+		}
+	]
+}
