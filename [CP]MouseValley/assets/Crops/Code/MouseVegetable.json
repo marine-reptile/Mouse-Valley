@@ -50,7 +50,7 @@
 				"MouseVegetableSeeds": {   //该作物种子的唯一ID，注意上下对应，不要空格（和种子命名保持一致）
 					"Seasons": [ "spring","summer","fall","winter" ],   //你的作物可以种植的季节，用“,”分隔。spring代表春日，summer夏，fall秋，winter冬，多个季节格式如下：[ "spring", "summer" ]
 					"DaysInPhase": [ 1, 1, 1, 2, 3 ],    //你的作物有多少个成长阶段，以及每一阶段的持续天数。若四阶段，则写四个数；每一阶段的持续时间以其对应数字表示。例如有三个成长阶段，每阶段分别为需要3、5、4天，则写成[ 3, 5, 4 ]
-					"HarvestMethod": false, //是否使用镰刀收割，默认关闭（false），开启为true
+					"HarvestMethod": "Grab", 
 					"IsRaised": true, //是否为架子作物，默认false
 					"IsPaddyCrop": false, //是否是靠水植物，同上
 					"RegrowDays": 2,   //循环生长需要的的天数，没有则写-1
