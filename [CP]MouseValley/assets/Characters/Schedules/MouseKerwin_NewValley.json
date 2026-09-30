@@ -1,0 +1,10 @@
+{
+	"Mon":"GOTO default",
+	"Tue":"GOTO default",
+	"Wed":"GOTO default",
+	"Thu":"GOTO default",
+	"Fri":"GOTO default",
+	"Sat":"GOTO default",
+	"Sun":"GOTO default",
+	"default":"700 Custom_MouseValleyNew 23 20 2 / 1200 Custom_MouseValleyNew 33 12 3 / 1700 Custom_MouseValleyNew 22 21 2 / 2100 Custom_MouseLivingRoom 30 20 2"
+}

@@ -4,7 +4,7 @@
 			"Action": "EditData",
 			"Target": "Data/Events/Farm",
 			"Entries": {
-				"312790001/x BuildMouseValley1/e 31279001": "null"//唯一信件id，x后的英文与下述对应。
+				"312790001/x BuildMouseValley1/e 31279004": "null"//唯一信件id，x后的英文与下述对应。认识四只老鼠后回到农场时寄出，次日收到
 			}
 		},
 		{
@@ -18,14 +18,14 @@
 			"Action": "EditData",
 			"Target": "Data/Events/Farm",
 			"Entries": {
-				"312790002/x RatSwordMail": "null"//唯一信件id，x后的英文与下述对应。
+				"312790002/x RatSwordMail/e 31279014/f MouseKerwin 500": "null"//唯一信件id，x后的英文与下述对应。看过建设完成事件、Kerwin 2 心后回到农场时寄出，次日收到
 			}
 		},
 		{
 			"Action": "EditData",
 			"Target": "Data/Mail",
 			"Entries": {
-				"RatSwordMail": "{{i18n:SellRatSword.text}}%item quest RatSwordQuest%%[#]{{i18n:SellRatSword.title}}",
+				"RatSwordMail": "{{i18n:RatSwordMail.text}}%item quest RatSwordQuest%%[#]{{i18n:RatSwordMail.title}}",
 			}
 		}
 	]

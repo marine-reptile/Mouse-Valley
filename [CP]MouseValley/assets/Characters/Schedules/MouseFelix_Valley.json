@@ -4,7 +4,7 @@
 	"Wed":"GOTO default",
 	"Thu":"GOTO default",
 	"Fri":"GOTO default",
-	"Set":"GOTO default",
+	"Sat":"GOTO default",
 	"Sun":"GOTO default",
-	"default":"630 Custom_MouseValleyRuined 15 15 0 / 650 Custom_MouseValleyRuined 20 20 1"
+	"default":"800 Custom_MouseValley 10 15 2 / 1200 Custom_MouseValley 15 19 1 / 1700 Custom_MouseValley 20 8 1"
 }

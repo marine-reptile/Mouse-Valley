@@ -5,9 +5,15 @@
   "Version": "0.0.1",
   "Description": "Mouse Valley",
   "UniqueID": "marinereptile.Mouse_Valley_CP",
-  "MinimumApiVersion": "3.13.0",
+  "MinimumApiVersion": "4.0.0",
   "ContentPackFor": {
     "UniqueID": "Pathoschild.ContentPatcher",
     "MinimumVersion": "2.0.0"
-  }
+  },
+  "Dependencies": [
+    {
+      "UniqueID": "marinereptile.Mouse_Valley_Core",
+      "IsRequired": true
+    }
+  ]
 }

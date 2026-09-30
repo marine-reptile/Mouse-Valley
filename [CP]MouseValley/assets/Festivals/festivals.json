@@ -8,6 +8,8 @@
 			"Action": "EditData",
 			"Target": "Data/Festivals/FestivalDates",
 			"Entries": { "winter1": "{{i18n:MouseNewYear.name}}" },
+			// 节日地图在重建后的老鼠谷，阶段 3 之前不注册，日历上也不显示
+			"When": { "MouseValleyStage": "3" },
 		},
 		{
 			"Action": "Load",

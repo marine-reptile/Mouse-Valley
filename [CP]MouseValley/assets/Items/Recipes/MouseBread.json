@@ -48,7 +48,7 @@
 			"Action": "EditData",
 			"Target": "Data/CookingRecipes",
 			"Entries": {
-				"MouseBread": "424 2 / 25 5 / MouseBread 1 / f MouseSella 0 / "
+				"MouseBread": "424 2/25 5/MouseBread 1/none/"   //解锁方式为 none：不按好感度自动解锁（写 f MouseSella N 时游戏会自动寄一封不存在的 MouseSellaCooking 信），改由下面的 MouseBread_recipe 邮件教会
 			}
 			//食物名称（不是内部ID！），然后是配方内容，格式：物品1的id（空格）数量（空格）物品2的id（空格）数量，再往后一格的不用管，再往后一格是：产出物品id（空格）数量，再往后一格是获取方法。
 			//获取方法示例
@@ -83,7 +83,7 @@
 				"MouseBread_Mail":{   //邮件触发的内部id
 					"Id": "MouseBread_Mail",   //和上面的一样
 					"Trigger": "DayEnding",   //触发后添加邮件的时间，一般不用管
-					"Condition": "PLAYER_HEARTS Current MouseSella 0",   //触发条件，这里是德米特里厄斯2心触发，参考网址：https://stardewvalleywiki.com/Modding:Game_state_queries
+					"Condition": "PLAYER_HAS_CONVERSATION_TOPIC Current questComplete_RatSwordQuest",   //触发条件：刚把 20 个奶酪交给 Kerwin（RatSwordQuest 完成后游戏会加上这个对话主题，持续 4 天），当晚寄出，次日收到，参考网址：https://stardewvalleywiki.com/Modding:Game_state_queries
 					"Action": "AddMail Current MouseBread_recipe tomorrow"
 				}   //把中间的部分改成邮件寄送部分的邮件id
 			}

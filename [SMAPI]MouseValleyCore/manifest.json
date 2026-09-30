@@ -1,0 +1,9 @@
+{
+	"Name": "Mouse_Valley_Core",
+	"Author": "marinereptile",
+	"Version": "0.0.1",
+	"Description": "Mouse Valley 的辅助模组：锁定老鼠的好感度，只能通过任务修改",
+	"UniqueID": "marinereptile.Mouse_Valley_Core",
+	"EntryDll": "MouseValleyCore.dll",
+	"MinimumApiVersion": "4.0.0"
+}

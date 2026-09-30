@@ -3,8 +3,8 @@
 		{
 			"LogName": "Load Object",
 			"Action": "Load",
-			"Target": "Mods\\TDB\\Objects\\Weapons",
-			"FromFile": "assets/Items/Weapons/Weapons.png"
+			"Target": "Mods/marinereptile.Mouse_Valley_CP/Weapons",
+			"FromFile": "assets/Items/Weapons/weapons.png"
 		},
 		{
 			"Action": "EditData",
@@ -25,7 +25,7 @@
 					"CritChance": 0.0,//暴击率
 					"CritMultiplier": 0.0,//暴击伤害倍数
 					"CanBeLostOnDeath": true,//玩家死亡时是否会掉落
-					"Texture": "Mods\\TDB\\Objects\\Weapons",//与Target对应
+					"Texture": "Mods/marinereptile.Mouse_Valley_CP/Weapons",//与Target对应
 					"SpriteIndex": 0,//如果单独画在一张图，那么不用改
 				},
 			}

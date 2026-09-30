@@ -8,7 +8,7 @@ As you spend time with the mice, you will discover there was once an ancient mou
 
 The mice will have babies! You can watch them grow up. They will have their own hobbies and will face many problems and troubles along the way. Maybe you can help them make their dreams come true? 老鼠们将会有孩子！你可以关注它们成长，它们将会有自己的兴趣爱好，在成长中遇到许多问题与烦恼。或许你可以帮助它们实现它们的梦想？
 
-Fourteen NPC mice in our planning! Each of them will have a complete storyline to help you immerse yourself in the life of Stardew Valley alongside the mice. 计划中的十四只 NPC 老鼠！它们中的每一只都将有一条完整的故事线，让你沉浸在与老鼠们一起的星露谷生活中。
+Sixteen NPC mice in our planning: the four founding mice and their twelve children! Each of them will have a complete storyline to help you immerse yourself in the life of Stardew Valley alongside the mice. 计划中的十六只 NPC 老鼠：四只初始老鼠和它们的十二个孩子！它们中的每一只都将有一条完整的故事线，让你沉浸在与老鼠们一起的星露谷生活中。
 
 New maps! A secret valley behind the mountains. You may find its entrance somewhere in the mine. 新地图！一 个群山背后的秘密山谷，你或许能在矿井中的某处找到它的入口。
 

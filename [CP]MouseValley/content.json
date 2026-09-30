@@ -1,5 +1,103 @@
 {
     "Format": "2.3.0",
+    "DynamicTokens": [
+        // 老鼠谷剧情阶段（后面的条目在条件满足时覆盖前面的）
+        // 0 未发现 / 1 废墟山谷 / 2 清理后的老鼠山谷 / 3 重建后的老鼠谷
+        // 对话主题 MouseValley_Cleanup、MouseValley_Construction 由事件 31279002、31279005 添加，持续期间阶段不推进
+        { "Name": "MouseValleyStage", "Value": "0" },
+        { "Name": "MouseValleyStage", "Value": "1", "When": { "HasSeenEvent": "31279001" } },
+        { "Name": "MouseValleyStage", "Value": "2", "When": { "HasSeenEvent": "31279002", "HasConversationTopic |contains=MouseValley_Cleanup": "false" } },
+        { "Name": "MouseValleyStage", "Value": "3", "When": { "HasSeenEvent": "31279005", "HasConversationTopic |contains=MouseValley_Construction": "false" } },
+
+        // 矿井老鼠洞通向的地图，阶段 0 没有值（不添加传送点）
+        { "Name": "MouseValleyMap", "Value": "Custom_MouseValleyRuined", "When": { "MouseValleyStage": "1" } },
+        { "Name": "MouseValleyMap", "Value": "Custom_MouseValley", "When": { "MouseValleyStage": "2" } },
+        { "Name": "MouseValleyMap", "Value": "Custom_MouseValleyNew", "When": { "MouseValleyStage": "3" } },
+
+        // 老鼠们的生活状态：Hidden 待在客厅不露面 / Valley 住在老鼠山谷 / NewValley 住在重建后的老鼠谷
+        // Felix 在 31279003 露面，其余三只在 31279004 露面；31279005 之后施工期间全部回到客厅
+        { "Name": "MouseFelixPhase", "Value": "Hidden" },
+        { "Name": "MouseFelixPhase", "Value": "Valley", "When": { "MouseValleyStage": "2", "HasSeenEvent |contains=31279003": "true", "HasSeenEvent |contains=31279005": "false" } },
+        { "Name": "MouseFelixPhase", "Value": "NewValley", "When": { "MouseValleyStage": "3" } },
+        { "Name": "MouseFamilyPhase", "Value": "Hidden" },
+        { "Name": "MouseFamilyPhase", "Value": "Valley", "When": { "MouseValleyStage": "2", "HasSeenEvent |contains=31279004": "true", "HasSeenEvent |contains=31279005": "false" } },
+        { "Name": "MouseFamilyPhase", "Value": "NewValley", "When": { "MouseValleyStage": "3" } },
+
+        // 施工期（看过 31279005，重建尚未完成）：矿井老鼠洞只显示提示文字，不再传送
+        { "Name": "MouseValleyConstruction", "Value": "false" },
+        { "Name": "MouseValleyConstruction", "Value": "true", "When": { "MouseValleyStage": "2", "HasSeenEvent |contains=31279005": "true" } },
+
+        // ---- 客厅座位（Custom_MouseLivingRoom）：每只老鼠吃饭、阅读时的专属座位和坐姿帧
+        // DineSeat_/ReadSeat_ 是 "X Y 朝向"（0 上 1 右 2 下 3 左），直接写在事件的角色列表里：MouseFelix {{DineSeat_MouseFelix}}
+        // DineFrame_/ReadFrame_ 是坐姿帧，入座后用 showFrame MouseFelix {{DineFrame_MouseFelix}}
+        // 坐姿帧约定：32-35 餐桌坐姿，24-27 捧书坐姿（各按下、右、上、左）；精灵图画好之前 MouseSitPose 为 false，退回站立帧
+        { "Name": "MouseSitPose", "Value": "false" },
+        { "Name": "DineSitFrame_Up", "Value": "8" },
+        { "Name": "DineSitFrame_Up", "Value": "34", "When": { "MouseSitPose": "true" } },
+        { "Name": "DineSitFrame_Right", "Value": "4" },
+        { "Name": "DineSitFrame_Right", "Value": "33", "When": { "MouseSitPose": "true" } },
+        { "Name": "DineSitFrame_Down", "Value": "0" },
+        { "Name": "DineSitFrame_Down", "Value": "32", "When": { "MouseSitPose": "true" } },
+        { "Name": "DineSitFrame_Left", "Value": "12" },
+        { "Name": "DineSitFrame_Left", "Value": "35", "When": { "MouseSitPose": "true" } },
+        { "Name": "ReadSitFrame_Right", "Value": "4" },
+        { "Name": "ReadSitFrame_Right", "Value": "25", "When": { "MouseSitPose": "true" } },
+        { "Name": "ReadSitFrame_Left", "Value": "12" },
+        { "Name": "ReadSitFrame_Left", "Value": "27", "When": { "MouseSitPose": "true" } },
+        // 餐厅：长桌坐初始老鼠、玩家和第三代，左小桌 Felix 家的孩子，右小桌 Kerwin 家的孩子
+        // 阅读厅：20 个坐垫都面向讲台（朝右），初始老鼠站在最后一排，用站立帧
+        { "Name": "DineSeat_MouseFelix", "Value": "24 14 1" }, { "Name": "DineFrame_MouseFelix", "Value": "{{DineSitFrame_Right}}" },
+        { "Name": "ReadSeat_MouseFelix", "Value": "6 11 1" }, { "Name": "ReadFrame_MouseFelix", "Value": "4" },
+        { "Name": "DineSeat_MouseKerwin", "Value": "36 14 3" }, { "Name": "DineFrame_MouseKerwin", "Value": "{{DineSitFrame_Left}}" },
+        { "Name": "ReadSeat_MouseKerwin", "Value": "6 14 1" }, { "Name": "ReadFrame_MouseKerwin", "Value": "4" },
+        { "Name": "DineSeat_MouseNina", "Value": "26 12 2" }, { "Name": "DineFrame_MouseNina", "Value": "{{DineSitFrame_Down}}" },
+        { "Name": "ReadSeat_MouseNina", "Value": "6 12 1" }, { "Name": "ReadFrame_MouseNina", "Value": "4" },
+        { "Name": "DineSeat_MouseSella", "Value": "34 12 2" }, { "Name": "DineFrame_MouseSella", "Value": "{{DineSitFrame_Down}}" },
+        { "Name": "ReadSeat_MouseSella", "Value": "6 13 1" }, { "Name": "ReadFrame_MouseSella", "Value": "4" },
+        { "Name": "DineSeat_MouseAdele", "Value": "24 22 1" }, { "Name": "DineFrame_MouseAdele", "Value": "{{DineSitFrame_Right}}" },
+        { "Name": "ReadSeat_MouseAdele", "Value": "12 12 1" }, { "Name": "ReadFrame_MouseAdele", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_MouseMandel", "Value": "26 20 2" }, { "Name": "DineFrame_MouseMandel", "Value": "{{DineSitFrame_Down}}" },
+        { "Name": "ReadSeat_MouseMandel", "Value": "11 11 1" }, { "Name": "ReadFrame_MouseMandel", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_MouseBaldwin", "Value": "27 20 2" }, { "Name": "DineFrame_MouseBaldwin", "Value": "{{DineSitFrame_Down}}" },
+        { "Name": "ReadSeat_MouseBaldwin", "Value": "10 12 1" }, { "Name": "ReadFrame_MouseBaldwin", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_MouseJoyce", "Value": "26 23 0" }, { "Name": "DineFrame_MouseJoyce", "Value": "{{DineSitFrame_Up}}" },
+        { "Name": "ReadSeat_MouseJoyce", "Value": "9 11 1" }, { "Name": "ReadFrame_MouseJoyce", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_MouseIvy", "Value": "27 23 0" }, { "Name": "DineFrame_MouseIvy", "Value": "{{DineSitFrame_Up}}" },
+        { "Name": "ReadSeat_MouseIvy", "Value": "8 12 1" }, { "Name": "ReadFrame_MouseIvy", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_MouseLucas", "Value": "29 22 3" }, { "Name": "DineFrame_MouseLucas", "Value": "{{DineSitFrame_Left}}" },
+        { "Name": "ReadSeat_MouseLucas", "Value": "7 11 1" }, { "Name": "ReadFrame_MouseLucas", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_MouseMatthew", "Value": "31 22 1" }, { "Name": "DineFrame_MouseMatthew", "Value": "{{DineSitFrame_Right}}" },
+        { "Name": "ReadSeat_MouseMatthew", "Value": "11 13 1" }, { "Name": "ReadFrame_MouseMatthew", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_MouseElijah", "Value": "33 20 2" }, { "Name": "DineFrame_MouseElijah", "Value": "{{DineSitFrame_Down}}" },
+        { "Name": "ReadSeat_MouseElijah", "Value": "12 14 1" }, { "Name": "ReadFrame_MouseElijah", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_MouseNolan", "Value": "34 20 2" }, { "Name": "DineFrame_MouseNolan", "Value": "{{DineSitFrame_Down}}" },
+        { "Name": "ReadSeat_MouseNolan", "Value": "10 14 1" }, { "Name": "ReadFrame_MouseNolan", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_MouseAlyssa", "Value": "36 22 3" }, { "Name": "DineFrame_MouseAlyssa", "Value": "{{DineSitFrame_Left}}" },
+        { "Name": "ReadSeat_MouseAlyssa", "Value": "9 13 1" }, { "Name": "ReadFrame_MouseAlyssa", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_MouseReagan", "Value": "33 23 0" }, { "Name": "DineFrame_MouseReagan", "Value": "{{DineSitFrame_Up}}" },
+        { "Name": "ReadSeat_MouseReagan", "Value": "8 14 1" }, { "Name": "ReadFrame_MouseReagan", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_MouseLetita", "Value": "34 23 0" }, { "Name": "DineFrame_MouseLetita", "Value": "{{DineSitFrame_Up}}" },
+        { "Name": "ReadSeat_MouseLetita", "Value": "7 13 1" }, { "Name": "ReadFrame_MouseLetita", "Value": "{{ReadSitFrame_Right}}" },
+        // 玩家（事件里写 farmer {{DineSeat_Player}}，玩家没有坐姿帧）
+        { "Name": "DineSeat_Player", "Value": "30 12 2" },
+        { "Name": "ReadSeat_Player", "Value": "16 12 1" },
+        // 第三代的家庭座位：A 为 Felix 家、B 为 Kerwin 家，分家定下来后再换成名字；Spare 是空位；Lectern 是讲台上的主讲
+        { "Name": "DineSeat_Gen3A1", "Value": "28 12 2" }, { "Name": "DineFrame_Gen3A1", "Value": "{{DineSitFrame_Down}}" },
+        { "Name": "ReadSeat_Gen3A1", "Value": "13 11 1" }, { "Name": "ReadFrame_Gen3A1", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_Gen3A2", "Value": "26 15 0" }, { "Name": "DineFrame_Gen3A2", "Value": "{{DineSitFrame_Up}}" },
+        { "Name": "ReadSeat_Gen3A2", "Value": "15 11 1" }, { "Name": "ReadFrame_Gen3A2", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_Gen3A3", "Value": "28 15 0" }, { "Name": "DineFrame_Gen3A3", "Value": "{{DineSitFrame_Up}}" },
+        { "Name": "ReadSeat_Gen3A3", "Value": "14 12 1" }, { "Name": "ReadFrame_Gen3A3", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_Gen3B1", "Value": "32 12 2" }, { "Name": "DineFrame_Gen3B1", "Value": "{{DineSitFrame_Down}}" },
+        { "Name": "ReadSeat_Gen3B1", "Value": "13 13 1" }, { "Name": "ReadFrame_Gen3B1", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_Gen3B2", "Value": "32 15 0" }, { "Name": "DineFrame_Gen3B2", "Value": "{{DineSitFrame_Up}}" },
+        { "Name": "ReadSeat_Gen3B2", "Value": "15 13 1" }, { "Name": "ReadFrame_Gen3B2", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_Gen3B3", "Value": "34 15 0" }, { "Name": "DineFrame_Gen3B3", "Value": "{{DineSitFrame_Up}}" },
+        { "Name": "ReadSeat_Gen3B3", "Value": "16 14 1" }, { "Name": "ReadFrame_Gen3B3", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "DineSeat_Spare", "Value": "30 15 0" }, { "Name": "DineFrame_Spare", "Value": "{{DineSitFrame_Up}}" },
+        { "Name": "ReadSeat_Spare", "Value": "14 14 1" }, { "Name": "ReadFrame_Spare", "Value": "{{ReadSitFrame_Right}}" },
+        { "Name": "ReadSeat_Lectern", "Value": "20 12 3" }, { "Name": "ReadFrame_Lectern", "Value": "{{ReadSitFrame_Left}}" }
+    ],
     "CustomLocations": [
         {
             "Name": "Custom_MouseValleyRuined",
@@ -16,6 +114,14 @@
         {
             "Name": "Custom_MouseLivingRoom",
             "FromMapFile": "assets/Maps/MouseLivingRoom.tmx",
+        },
+        {
+            "Name": "Custom_MouseFelixHouse",
+            "FromMapFile": "assets/Maps/MouseFelixHouse.tmx"
+        },
+        {
+            "Name": "Custom_MouseKerwinHouse",
+            "FromMapFile": "assets/Maps/MouseKerwinHouse.tmx"
         },
         {
             "Name": "Custom_MouseValleyNew_MouseNewYear",

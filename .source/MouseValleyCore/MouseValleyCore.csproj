@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>MouseValleyCore</AssemblyName>
+    <RootNamespace>MouseValleyCore</RootNamespace>
+    <Version>0.0.1</Version>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+
+    <!-- ModBuildConfig：编译后自动部署到 Mods/Mouse Valley/[SMAPI]MouseValleyCore -->
+    <GamePath>D:\Jucason\Stardew-Valley-Developer</GamePath>
+    <GameModsPath>$(GamePath)\Mods\Mouse Valley</GameModsPath>
+    <ModFolderName>[SMAPI]MouseValleyCore</ModFolderName>
+    <EnableModZip>false</EnableModZip>
+    <EnableHarmony>true</EnableHarmony>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.*" />
+  </ItemGroup>
+
+</Project>

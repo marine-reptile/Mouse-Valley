@@ -29,15 +29,12 @@
 					"Name": "MouseVegetable",   //作物的名字，同上
 					"DisplayName": "{{i18n:MouseVegetable.name}}",   //作物的游戏内名字
 					"Description": "{{i18n:MouseVegetable.text}}",//作物的游戏内描述
-					"Type": "vegetables",   //种类，这里是蔬菜
+					"Type": "Basic",   //物品类型：原版作物、采集品都是 Basic，具体分类由下面的 Category 决定
 					"Category": -75,   //种类编号，随着作物种类更改
 					"Price": 100,   //售出价格
 					"Edibility": 31,
 					"IsDrink": false,
-					"Buff": {
-					},
 					"ContextTags": [ "color_blue"],   //作物颜色
-					"Miscellaneous": null,
 					"Texture": "{{InternalAssetKey: assets/Crops/Image/MouseVegetable.png}}",   //纹理读取，除了名字不要变更
 					"SpriteIndex": 0
 				}
@@ -49,7 +46,7 @@
 			"Entries": {
 				"MouseVegetableSeeds": {   //该作物种子的唯一ID，注意上下对应，不要空格（和种子命名保持一致）
 					"Seasons": [ "spring","summer","fall","winter" ],   //你的作物可以种植的季节，用“,”分隔。spring代表春日，summer夏，fall秋，winter冬，多个季节格式如下：[ "spring", "summer" ]
-					"DaysInPhase": [ 1, 1, 1, 2, 3 ],    //你的作物有多少个成长阶段，以及每一阶段的持续天数。若四阶段，则写四个数；每一阶段的持续时间以其对应数字表示。例如有三个成长阶段，每阶段分别为需要3、5、4天，则写成[ 3, 5, 4 ]
+					"DaysInPhase": [ 1, 1, 1, 2, 2 ],    //合计 7 天成熟，与种子描述一致。你的作物有多少个成长阶段，以及每一阶段的持续天数。若四阶段，则写四个数；每一阶段的持续时间以其对应数字表示。例如有三个成长阶段，每阶段分别为需要3、5、4天，则写成[ 3, 5, 4 ]
 					"HarvestMethod": "Grab", 
 					"IsRaised": true, //是否为架子作物，默认false
 					"IsPaddyCrop": false, //是否是靠水植物，同上

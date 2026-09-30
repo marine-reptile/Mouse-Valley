@@ -15,6 +15,56 @@
 		{
 			"Action": "Include",
 			"FromFile": "assets/Characters/Code/MouseSella.json"
+		},
+		// 第二代小老鼠：Felix 与 Nina 家
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseAdele.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseMandel.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseBaldwin.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseJoyce.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseIvy.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseLucas.json"
+		},
+		// 第二代小老鼠：Kerwin 与 Sella 家
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseMatthew.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseElijah.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseNolan.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseAlyssa.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseReagan.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/Characters/Code/MouseLetita.json"
 		}
 	]
 }

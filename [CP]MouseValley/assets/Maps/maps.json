@@ -23,12 +23,17 @@
 		},
 		{
 			"Action": "Load",
-			"Target": "Data/Events/AdventureGuild",
+			"Target": "Data/Events/Custom_MouseFelixHouse",
 			"FromFile": "assets/XNB/Event.xnb"
 		},
 		{
 			"Action": "Load",
-			"Target": "Data/Events/BackWoods",
+			"Target": "Data/Events/Custom_MouseKerwinHouse",
+			"FromFile": "assets/XNB/Event.xnb"
+		},
+		{
+			"Action": "Load",
+			"Target": "Data/Events/AdventureGuild",
 			"FromFile": "assets/XNB/Event.xnb"
 		},
 		{
@@ -37,6 +42,8 @@
 			"FromFile": "assets/XNB/Event.xnb"
 		},
 		{
+			// 矿井老鼠洞：看过 31279001 后出现，目标地图随剧情阶段切换；施工期间换成下面的提示文字
+			"LogName": "矿井老鼠洞传送点",
 			"Action": "EditMap",
 			"Target": "Maps/Mine",
 			"MapTiles": [
@@ -44,10 +51,77 @@
 					"Position": { "X": 20, "Y": 3 },
 					"Layer": "Buildings",
 					"SetProperties": {
-						"Action":"Warp 23 28 Custom_MouseValleyNew"
+						"Action":"Warp 23 28 {{MouseValleyMap}}"
 					}
 				},
-			]
+			],
+			"When": { "MouseValleyStage": "1, 2, 3", "MouseValleyConstruction": "false" },
+			"Update": "OnLocationChange"
+		},
+		{
+			// 施工期间（31279005 之后到阶段 3 之前）老鼠洞不可进入
+			"LogName": "矿井老鼠洞：施工中",
+			"Action": "EditMap",
+			"Target": "Maps/Mine",
+			"MapTiles": [
+				{
+					"Position": { "X": 20, "Y": 3 },
+					"Layer": "Buildings",
+					"SetProperties": {
+						"Action":"Message MV.Construction"
+					}
+				},
+			],
+			"When": { "MouseValleyConstruction": "true" },
+			"Update": "OnLocationChange"
+		},
+		{
+			// 山谷水面的鱼。钓鱼时游戏把这里的 Fish 和 Default 地点的鱼（垃圾、秘密纸条等）合并后抽取，鱼本身的时间、天气要求仍按 Data/Fish
+			// 三个地点的条目由 content.json 的 CustomLocations 自动创建（它的补丁先于这里执行），所以只能用 Fields 补上 Fish 字段，不能用 Entries 整条覆盖，否则地点不会被创建
+			"LogName": "山谷鱼类",
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"Fields": {
+				// 废墟山谷是人类的垃圾堆，只有几种耐脏的鱼，其余多半钓上垃圾
+				"Custom_MouseValleyRuined": {
+					"Fish": [
+						{ "Id": "(O)142", "ItemId": "(O)142", "Condition": "LOCATION_SEASON Here spring summer fall" },   //鲤鱼，春夏秋
+						{ "Id": "(O)700", "ItemId": "(O)700" },   //大头鱼
+						{ "Id": "(O)153", "ItemId": "(O)153" }    //绿藻
+					]
+				},
+				// 老鼠山谷与重建山谷：山谷在矿井里，与山顶湖相通，鱼种照搬原版 Mountain（不含传说之鱼）
+				"Custom_MouseValley": {
+					"Fish": [
+						{ "Id": "(O)136", "ItemId": "(O)136" },   //大嘴鲈鱼
+						{ "Id": "(O)142", "ItemId": "(O)142", "Condition": "LOCATION_SEASON Here spring summer fall" },   //鲤鱼，春夏秋
+						{ "Id": "(O)153", "ItemId": "(O)153" },   //绿藻
+						{ "Id": "(O)702", "ItemId": "(O)702" },   //鲢鱼
+						{ "Id": "(O)700", "ItemId": "(O)700" },   //大头鱼
+						{ "Id": "(O)138", "ItemId": "(O)138", "Season": "Summer" },   //虹鳟鱼，夏
+						{ "Id": "(O)698", "ItemId": "(O)698", "Condition": "LOCATION_SEASON Here summer winter" },   //鲟鱼，夏冬
+						{ "Id": "(O)140", "ItemId": "(O)140", "Condition": "LOCATION_SEASON Here fall winter" },   //大眼鱼，秋冬
+						{ "Id": "(O)269", "ItemId": "(O)269", "Condition": "LOCATION_SEASON Here fall winter" },   //午夜鲤鱼，秋冬
+						{ "Id": "(O)141", "ItemId": "(O)141", "Season": "Winter" },   //河鲈，冬
+						{ "Id": "(O)707", "ItemId": "(O)707", "Season": "Winter" }    //蛇齿单线鱼，冬
+					]
+				},
+				"Custom_MouseValleyNew": {
+					"Fish": [
+						{ "Id": "(O)136", "ItemId": "(O)136" },
+						{ "Id": "(O)142", "ItemId": "(O)142", "Condition": "LOCATION_SEASON Here spring summer fall" },
+						{ "Id": "(O)153", "ItemId": "(O)153" },
+						{ "Id": "(O)702", "ItemId": "(O)702" },
+						{ "Id": "(O)700", "ItemId": "(O)700" },
+						{ "Id": "(O)138", "ItemId": "(O)138", "Season": "Summer" },
+						{ "Id": "(O)698", "ItemId": "(O)698", "Condition": "LOCATION_SEASON Here summer winter" },
+						{ "Id": "(O)140", "ItemId": "(O)140", "Condition": "LOCATION_SEASON Here fall winter" },
+						{ "Id": "(O)269", "ItemId": "(O)269", "Condition": "LOCATION_SEASON Here fall winter" },
+						{ "Id": "(O)141", "ItemId": "(O)141", "Season": "Winter" },
+						{ "Id": "(O)707", "ItemId": "(O)707", "Season": "Winter" }
+					]
+				}
+			}
 		},
 		{
 			"Action": "EditData",
@@ -63,7 +137,9 @@
 				"MVR.8": "{{i18n:Map_MVR.8}}",
 				"MVR.9": "{{i18n:Map_MVR.9}}",
 				"MVR.10": "{{i18n:Map_MVR.10}}",
-				"MVR.11": "{{i18n:Map_MVR.11}}"
+				"MVR.11": "{{i18n:Map_MVR.11}}",
+				"MV.Construction": "{{i18n:Map_MV.Construction}}",
+				"MV.Gen3Door": "{{i18n:Map_MV.Gen3Door}}"
 			}
 		},
 		{

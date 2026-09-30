@@ -29,14 +29,22 @@
 					"WinterStarParticipant": false,
 					"ExcludeFromIntroductionsQuest": false,
 					"ExcludeFromPerfectionScore": false,
-					"FriendsAndFamily": {},
+					"FriendsAndFamily": {
+						"MouseNina": "[LocalizedText Strings\\Characters:Relative_Wife]",
+						"MouseAdele": "[LocalizedText Strings\\Characters:Relative_Daughter]",
+						"MouseMandel": "[LocalizedText Strings\\Characters:Relative_Son]",
+						"MouseBaldwin": "[LocalizedText Strings\\Characters:Relative_Son]",
+						"MouseJoyce": "[LocalizedText Strings\\Characters:Relative_Daughter]",
+						"MouseIvy": "[LocalizedText Strings\\Characters:Relative_Daughter]",
+						"MouseLucas": "[LocalizedText Strings\\Characters:Relative_Son]"
+					},
 					"UnlockConditions": null,
 					"SpawnIfMissing": true,
 					"Home": [
 						{
 							"Id": "Default",
 							"Location": "Custom_MouseLivingRoom",
-							"Tile":{"X": 22,"Y": 27},
+							"Tile":{"X": 12,"Y": 22},
 							"Direction": "Down"
 						}
 					],
@@ -53,7 +61,10 @@
 					"HiddenProfileEmoteFrameCount": 4,
 					"HiddenProfileEmoteFrameDuration": 200.0,
 					"FestivalVanillaActorIndex": 0,
-					"CustomFields": {},
+					"CustomFields": {
+						// 好感度只作为任务进度标记，对话、送礼不会改变，只能由任务事件设定（见 [SMAPI]MouseValleyCore）
+						"marinereptile.Mouse_Valley_Core/FriendshipLocked": "true"
+					},
 				}
 			}
 		},
@@ -70,12 +81,38 @@
 		{
 			"Action": "Load",
 			"Target": "Characters/Dialogue/MouseFelix",
+			// 先加载空白底稿，再由下面的 Include 用 EditData 填入对话（Load 进来的文件里不能用 i18n 令牌）
+			"FromFile": "assets/Characters/Dialogue/blank.json"
+		},
+		{
+			"Action": "Include",
 			"FromFile": "assets/Characters/Dialogue/MouseFelix/MouseFelix.json"
 		},
 		{
+			// 日程随 MouseFelixPhase 切换：MouseFelix_Hidden / _Valley / _NewValley.json，每天早上更新
 			"Action": "Load",
 			"Target": "Characters/schedules/MouseFelix",
-			"FromFile": "assets/Characters/Schedules/MouseFelix.json"
+			"FromFile": "assets/Characters/Schedules/MouseFelix_{{MouseFelixPhase}}.json"
+		},
+		{
+			// 住在老鼠山谷期间的住处，覆盖上面的 Home；看完事件十分钟内生效，当晚 NPC 会被送到这里
+			"LogName": "MouseFelix 住处：老鼠山谷",
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Fields": {
+				"MouseFelix": {
+					"Home": [
+						{
+							"Id": "Default",
+							"Location": "Custom_MouseValley",
+							"Tile":{"X": 20,"Y": 8},
+							"Direction": "Right"
+						}
+					]
+				}
+			},
+			"When": { "MouseFelixPhase": "Valley" },
+			"Update": "OnLocationChange, OnTimeChange"
 		}
 	]
 }

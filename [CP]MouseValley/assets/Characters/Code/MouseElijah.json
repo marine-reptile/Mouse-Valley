@@ -1,0 +1,90 @@
+{
+	"Changes": [
+		{
+			// 第二代小老鼠，父母是 Kerwin 与 Sella。尚未出生：UnlockConditions 为 FALSE，游戏不会生成这只 NPC，以后写好出生剧情再换成对应条件
+			// 出生前不计入完美度和结局幻灯片，避免玩家因为见不到它而无法达成完美度；生日、贴图、头像都是占位
+			"Action": "EditData",
+			"Target": "Data/Characters",
+			"Entries": {
+				"MouseElijah": {
+					"DisplayName": "{{i18n:MouseElijah.name}}",
+					"BirthSeason": "summer",
+					"BirthDay": 7,
+					"Age": "Child",
+					"HomeRegion": "Other",
+					"Language": "Default",
+					"Gender": "Male",
+					"CanSocialize": true,
+					"CanCommentOnPurchasedShopItems": false,
+					"CanReceiveGifts": true,
+					"IsDarkSkinned": false,
+					"CanBeRomanced": false,
+					"Calendar": "HiddenUntilMet",
+					"SocialTab": "HiddenUntilMet",
+					"ItemDeliveryQuests": false,
+					"PerfectionScore": false,
+					"EndSlideShow": false,
+					"CanVisitIsland": false,
+					"DumpsterDiveEmote": 32,
+					"DumpsterDiveFriendshipEffect": 5,
+					"FlowerDanceCanDance": false,
+					"WinterStarParticipant": false,
+					"ExcludeFromIntroductionsQuest": true,
+					"ExcludeFromPerfectionScore": true,
+					"FriendsAndFamily": {
+						"MouseKerwin": "[LocalizedText Strings\\Characters:Relative_Dad]",
+						"MouseSella": "[LocalizedText Strings\\Characters:Relative_Mom]",
+						"MouseMatthew": "",
+						"MouseNolan": "",
+						"MouseAlyssa": "",
+						"MouseReagan": "",
+						"MouseLetita": ""
+					},
+					"UnlockConditions": "FALSE",
+					"SpawnIfMissing": true,
+					"Home": [
+						{
+							"Id": "Default",
+							"Location": "Custom_MouseLivingRoom",
+							"Tile": { "X": 26, "Y": 24 },
+							"Direction": "Down"
+						}
+					],
+					"Size": {
+						"X": 16,
+						"Y": 32
+					},
+					"Breather": false,
+					"KissSpriteIndex": 28,
+					"HiddenProfileEmoteSound": null,
+					"HiddenProfileEmoteDuration": -1,
+					"HiddenProfileEmoteStartFrame": 16,
+					"HiddenProfileEmoteFrameCount": 4,
+					"HiddenProfileEmoteFrameDuration": 200.0,
+					"FestivalVanillaActorIndex": 0,
+					"CustomFields": {
+						// 好感度只作为任务进度标记，对话、送礼不会改变，只能由任务事件设定（见 [SMAPI]MouseValleyCore）
+						"marinereptile.Mouse_Valley_Core/FriendshipLocked": "true"
+					}
+				}
+			}
+		},
+		{
+			// 占位：借用 Felix 的贴图和头像
+			"Action": "Load",
+			"Target": "Characters/MouseElijah",
+			"FromFile": "assets/Characters/Sprites/MouseFelix.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Portraits/MouseElijah",
+			"FromFile": "assets/Characters/Portraits/MouseFelix.png"
+		},
+		{
+			// 还没有对话，先加载空白底稿
+			"Action": "Load",
+			"Target": "Characters/Dialogue/MouseElijah",
+			"FromFile": "assets/Characters/Dialogue/blank.json"
+		}
+	]
+}
